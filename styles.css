@@ -1,0 +1,364 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: 'Lato';
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff;
+}
+
+/* NAV */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
+    padding: 20px 100px 30px 100px;
+    z-index: 13;
+}
+
+nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    line-height: 50px;
+    color: #02187E;
+    background-color: #FFE901;
+    border: 8px solid #2982FF;
+    border-radius: 111px;
+
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 19px;
+    letter-spacing: 0.11em;
+
+    transition: all 300ms;
+}
+
+nav img {
+    width: 133px;
+}
+
+/* ESTILOS PARA EL NAV ALTERNATIVO */
+.nav-alternativa {
+    padding: 12px 100px 22px 100px;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.nav-alternativa a {
+    width: 150px;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.nav-alternativa .btn-hamburguesa {
+    margin-top: 15px;
+}
+
+/* HAMBURGUESA */
+.btn-hamburguesa {
+    z-index: 12;
+}
+
+.btn-hamburguesa div {
+    width: 34px;
+    height: 4px;
+    background-color: #FFE901;
+    border: 4px solid #2981FF;
+    border-radius: 111px;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    cursor: pointer;
+
+    transition: all 300ms;
+
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.active-linea-1 {
+    transform: rotate(45deg) translate(0px, 17px);
+    box-shadow: none !important;
+}
+
+.active-linea-2 {
+    opacity: 0;
+    margin-left: -30px;
+    box-shadow: none !important;
+}
+
+.active-linea-3 {
+    transform: rotate(-45deg) translate(0px, -17px);
+    box-shadow: none !important;
+}
+
+/* MENÚ HAMBURGUESA */
+.menu-hamburguesa {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 400px;
+    height: 100vh;
+    z-index: 9;
+    background: #3f7dd3;
+    transition: all 300ms;
+    padding-top: 50px;
+}
+
+.menu-hamburguesa-alternativo {
+    position: fixed !important;
+}
+
+.menu-hamburguesa a {
+    margin: 12px;
+    font-size: 25px;
+    color: #ffffff;
+    transition: all 150ms;
+}
+
+.menu-hamburguesa a:hover {
+    color: #bdbdbd;
+}
+
+.ocultar-menu {
+    left: -400px;
+}
+
+.mostrar-menu {
+    left: 0px;
+}
+
+.ocultar {
+    opacity: 0;
+}
+
+.mostrar {
+    opacity: 1;
+}
+
+/* PORTADA INICIO */
+.portada{
+    background-image: url('./Images/cielo.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 1090px;
+    overflow: hidden;
+}
+
+.titulo img{
+    width: 45%;
+}
+
+.titulo{
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.casas{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-around;
+}
+
+.casas img{
+    width: 569px;
+}
+
+.casas img.casa-izq{
+    position: relative;
+    left: -103px;
+}
+
+.casas img.casa-centro{
+    width: 778px;
+}
+
+.casas img.casa-der{
+    position: relative;
+    right: -43px;
+}
+
+.spider-pibes{
+    margin: 20%;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    z-index: 4;
+    overflow: hidden;
+}
+
+
+
+.spider-pibes img.tela2{
+    width: 65%;
+    position: absolute;
+    z-index: 5;
+    margin-left: 1094px;
+    margin-top: -53px;
+}
+
+.spider-pibes img.tela1{
+    transform: scaleX(-1);
+    margin-left: -668px;
+    margin-top: -229px;
+    width: 100%;
+    position: absolute;
+    z-index: 5;
+}
+
+/*PORTADA INICIO FIN*/
+
+/*DESCRIPCION INICIO*/
+.descripcion{
+    background-color: #8F6AA6;
+    height: 1055px;
+    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 91%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 4;
+    top: 100%;
+    width: 100%;
+}
+
+img.screen1{
+    width: 1103px;
+    position: absolute;
+    z-index: 4;
+    margin-top: 33%;
+    margin-left: 5%;
+}
+
+img.duende{
+    width: 766px;
+    position: absolute;
+    z-index: 5;
+    margin-left: 1000px;
+}
+
+.titulo-desc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    font-family: Lato;
+}
+
+.titulo-desc p{
+    margin: 20px;
+    font-size: 30px;
+    color: white;
+}
+
+.titulo-desc h1{
+    color: white;
+    margin: 20px;
+    font-size: 60px;
+}
+/*DESCRIPCION FIN*/
+
+/*PERSONAJES INICIO*/
+
+.personajes{
+    margin-top: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.personajes p{
+    font-size: 20px;
+}
+
+/*PERSONAJES FIN*/
+
+/*VENGADORES INICIO*/
+
+.informacion{
+    margin-top: 200px;
+    background-color: black;
+    clip-path: polygon(0 0, 100% 10%, 100% 99%, 0 90%);
+    height: 1900px;
+}
+
+img.imagen-gwen1{
+    width: 950px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 0px;
+}
+
+img.imagen-gwen2{
+    width: 950px;
+    position: absolute;
+    z-index: 2;
+    margin-top: 216px;
+}
+
+img.imagen-gwen3{
+    width: 950px;
+    position: absolute;
+    z-index: 3;
+    margin-top: 455px;
+}
+
+/*when haces tus momos en video*/
+.gwen-fondo{
+    width: 100%;
+}
+
+.informacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.info-vengadores{
+    position: absolute;
+    z-index: 1;
+    margin-left: 12%;
+    background-image: url("./Images/cielo2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 75%;
+    height: 800px;
+    margin-top: -30%;
+}
+
+img.arboles{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+img.pasto{
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+}
+
+.tituloV{
+    color: white;
+}
