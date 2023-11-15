@@ -1,5 +1,6 @@
 const btnHamburguesa = document.querySelector(".btn-hamburguesa");
 const menuHamburguesa = document.querySelector(".menu-hamburguesa");
+const navBar = document.querySelector(".nav");
 
 const linea1 = document.querySelector(".linea-1");
 const linea2 = document.querySelector(".linea-2");
@@ -40,15 +41,15 @@ function animacionBoton() {
     linea3.classList.toggle("active-linea-3");
 }
 
-function mostrarLinks() {
-    let temporizador;
+async function mostrarLinks() {
     //SI EL MENÚ HAMBURGUESA ES VISIBLE, MUESTRA LOS LINKS DE A UNO
     if (menuHamburguesa.classList.contains("mostrar-menu")) {
         for (let i = 0; i < arregloLinks.length; i++) {
-            temporizador = setTimeout(() => {
-                arregloLinks[i].classList.remove("ocultar");
-                arregloLinks[i].classList.add("mostrar");
-            }, i * 200);
+            
+            await wait(150);
+            arregloLinks[i].classList.remove("ocultar");
+            arregloLinks[i].classList.add("mostrar");
+                    
         }
     }
     //SI NO ES VISIBLE, LOS OCULTA
@@ -61,4 +62,10 @@ function mostrarLinks() {
     }
     
     
+}
+
+function wait(ms)  {
+    return new Promise( resolve => {
+        setTimeout(()=> {resolve('')} , ms );
+    })
 }

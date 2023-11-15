@@ -20,6 +20,7 @@ nav {
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
     padding: 20px 100px 30px 100px;
     z-index: 13;
+    position: absolute;
 }
 
 nav a {
@@ -35,32 +36,36 @@ nav a {
 
     font-size: 20px;
     font-weight: 900;
-    line-height: 19px;
     letter-spacing: 0.11em;
 
     transition: all 300ms;
 }
 
 nav img {
-    width: 133px;
+    height: 68px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    transition: all 300ms;
 }
 
 /* ESTILOS PARA EL NAV ALTERNATIVO */
 .nav-alternativa {
-    padding: 12px 100px 22px 100px;
+    padding: 22px 100px 22px 100px;
     position: sticky;
     top: 0;
     left: 0;
+    background-color: #5499F8;
 }
 
 .nav-alternativa a {
     width: 150px;
-    line-height: 20px;
+    line-height: 32px;
     font-size: 15px;
 }
 
-.nav-alternativa .btn-hamburguesa {
-    margin-top: 15px;
+.nav-alternativa img {
+    height: 60px;
 }
 
 /* HAMBURGUESA */
@@ -105,22 +110,18 @@ nav img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
     width: 400px;
     height: 100vh;
     z-index: 9;
     background: #3f7dd3;
     transition: all 300ms;
-    padding-top: 50px;
-}
-
-.menu-hamburguesa-alternativo {
-    position: fixed !important;
+    padding-top: 150px;
 }
 
 .menu-hamburguesa a {
+    position: relative;
     margin: 12px;
     font-size: 25px;
     color: #ffffff;
@@ -140,11 +141,11 @@ nav img {
 }
 
 .ocultar {
-    opacity: 0;
+    left: -1000px;
 }
 
 .mostrar {
-    opacity: 1;
+    left: 0px;
 }
 
 /* PORTADA INICIO */
@@ -156,6 +157,7 @@ nav img {
     flex-direction: column;
     height: 1090px;
     overflow: hidden;
+    /* padding-top: 60px; */
 }
 
 .titulo img{
