@@ -8,8 +8,13 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #ffffff;
+body { 
+    background-color: #ffffff;
+}
+
+main {
+    background-color: #5499F8;
+    padding-top: 116px;
 }
 
 /* NAV */
@@ -21,6 +26,7 @@ nav {
     padding: 20px 100px 30px 100px;
     z-index: 13;
     position: absolute;
+    top: 0px;
 }
 
 nav a {
@@ -38,7 +44,14 @@ nav a {
     font-weight: 900;
     letter-spacing: 0.11em;
 
-    transition: all 300ms;
+    transition: all 450ms;
+}
+
+nav a:hover {
+    background-color: rgb(255, 246, 141);
+    box-shadow: 4px 5px 0px 0px #02187E;
+    transform: translate(-5px, -4px);
+    transition: all 150ms;
 }
 
 nav img {
@@ -55,7 +68,6 @@ nav img {
     position: sticky;
     top: 0;
     left: 0;
-    background-color: #5499F8;
 }
 
 .nav-alternativa a {
@@ -71,6 +83,7 @@ nav img {
 /* HAMBURGUESA */
 .btn-hamburguesa {
     z-index: 12;
+    transition: all 300ms;
 }
 
 .btn-hamburguesa div {
@@ -157,7 +170,6 @@ nav img {
     flex-direction: column;
     height: 1090px;
     overflow: hidden;
-    /* padding-top: 60px; */
 }
 
 .titulo img{
@@ -251,9 +263,10 @@ img.screen1{
 
 img.duende{
     width: 766px;
-    position: absolute;
+    position: relative;
     z-index: 5;
-    margin-left: 1000px;
+    left: 1000px;
+    top: -50px;
 }
 
 .titulo-desc{
@@ -261,8 +274,9 @@ img.duende{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 60%;
     font-family: Lato;
+    padding: 100px;
 }
 
 .titulo-desc p{
@@ -363,4 +377,43 @@ img.pasto{
 
 .tituloV{
     color: white;
+}
+
+/* FOOTER */
+footer {
+    margin-top: 500px;
+    width: 100%;
+    height: 600px;
+    background: #5E5E5D;
+}
+
+.plataformas-juego {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    padding: 20px 100px 20px 100px;
+    background: #242424;
+}
+
+.plataformas-juego img {
+    height: 100%;
+}
+
+.texto-footer {
+    padding: 100px;
+}
+
+.texto-footer p,
+.texto-footer p a {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.11em;
+    text-align: left;
+}
+
+.texto-footer img {
+    margin-top: 25px;
 }

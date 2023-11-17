@@ -18,6 +18,7 @@ let arregloLinks = [link1, link2, link3, link4, link5, link6];
 btnHamburguesa.addEventListener("click", desplegarMenu);
 
 function desplegarMenu() {
+
     animacionBoton();
 
     //SI EL MENÚ ES INVISIBLE, LO MUESTRA
@@ -36,6 +37,9 @@ function desplegarMenu() {
 }
 
 function animacionBoton() {
+    if (btnHamburguesa.style.marginLeft == "12px") btnHamburguesa.style.marginLeft="0px";
+    else btnHamburguesa.style.marginLeft="12px";
+    
     linea1.classList.toggle("active-linea-1");
     linea2.classList.toggle("active-linea-2");
     linea3.classList.toggle("active-linea-3");
@@ -46,7 +50,7 @@ async function mostrarLinks() {
     if (menuHamburguesa.classList.contains("mostrar-menu")) {
         for (let i = 0; i < arregloLinks.length; i++) {
             
-            await wait(150);
+            await wait(50);
             arregloLinks[i].classList.remove("ocultar");
             arregloLinks[i].classList.add("mostrar");
                     
@@ -54,7 +58,6 @@ async function mostrarLinks() {
     }
     //SI NO ES VISIBLE, LOS OCULTA
     else {
-        clearTimeout(temporizador);
         for (let i = 0; i < arregloLinks.length; i++) {
             arregloLinks[i].classList.remove("mostrar");
             arregloLinks[i].classList.add("ocultar");
