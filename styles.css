@@ -12,6 +12,12 @@ body {
     background: #ffffff;
 }
 
+main {
+    background-color: #5499F8;
+    padding-top: 116px;
+}
+
+
 /* NAV */
 nav {
     width: 100%;
@@ -20,6 +26,8 @@ nav {
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
     padding: 20px 100px 30px 100px;
     z-index: 13;
+    position: absolute;
+    top: 0px;
 }
 
 nav a {
@@ -35,19 +43,29 @@ nav a {
 
     font-size: 20px;
     font-weight: 900;
-    line-height: 19px;
     letter-spacing: 0.11em;
 
-    transition: all 300ms;
+    transition: all 450ms;
+}
+
+nav a:hover {
+    background-color: rgb(255, 246, 141);
+    box-shadow: 4px 5px 0px 0px #02187E;
+    transform: translate(-5px, -4px);
+    transition: all 150ms;
 }
 
 nav img {
-    width: 133px;
+    height: 68px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    transition: all 300ms;
 }
 
 /* ESTILOS PARA EL NAV ALTERNATIVO */
 .nav-alternativa {
-    padding: 12px 100px 22px 100px;
+    padding: 22px 100px 22px 100px;
     position: sticky;
     top: 0;
     left: 0;
@@ -55,17 +73,18 @@ nav img {
 
 .nav-alternativa a {
     width: 150px;
-    line-height: 20px;
+    line-height: 32px;
     font-size: 15px;
 }
 
-.nav-alternativa .btn-hamburguesa {
-    margin-top: 15px;
+.nav-alternativa img {
+    height: 60px;
 }
 
 /* HAMBURGUESA */
 .btn-hamburguesa {
     z-index: 12;
+    transition: all 300ms;
 }
 
 .btn-hamburguesa div {
@@ -105,22 +124,18 @@ nav img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
-    left: 0;
     width: 400px;
     height: 100vh;
     z-index: 9;
     background: #3f7dd3;
     transition: all 300ms;
-    padding-top: 50px;
-}
-
-.menu-hamburguesa-alternativo {
-    position: fixed !important;
+    padding-top: 150px;
 }
 
 .menu-hamburguesa a {
+    position: relative;
     margin: 12px;
     font-size: 25px;
     color: #ffffff;
@@ -140,11 +155,11 @@ nav img {
 }
 
 .ocultar {
-    opacity: 0;
+    left: -1000px;
 }
 
 .mostrar {
-    opacity: 1;
+    left: 0px;
 }
 
 /* PORTADA INICIO */
@@ -159,7 +174,7 @@ nav img {
 }
 
 .titulo img{
-    width: 45%;
+    width: 590px;
 }
 
 .titulo{
@@ -199,30 +214,52 @@ nav img {
     margin: 20%;
     display: flex;
     flex-direction: row;
-    position: absolute;
     z-index: 4;
-    overflow: hidden;
+    position: absolute;
+    justify-content: center;
 }
 
 
-
 .spider-pibes img.tela2{
-    width: 65%;
+    width: 610px;
     position: absolute;
-    z-index: 5;
-    margin-left: 1094px;
-    margin-top: -53px;
+    z-index: 6;
+    left: 1040px;
+    top: 26px;
 }
 
 .spider-pibes img.tela1{
     transform: scaleX(-1);
-    margin-left: -668px;
-    margin-top: -229px;
-    width: 100%;
+    left: -603px;
+    top: 8px;
+    width: 1108px;
     position: absolute;
+    z-index: 6;
+}
+
+img.gwenP{
+    width: 502px;
+    position: absolute;
+    z-index: 4;
+    left: -146px;
+    top: -13px;
+}
+
+img.peterP{
+    position: absolute;
+    width: 610px;
+    left: 278px;
+    top: 88px;
     z-index: 5;
 }
 
+img.milesP{
+    position: absolute;
+    z-index: 4;
+    left: 651px;
+    width: 548px;
+    top: -45px;
+}
 /*PORTADA INICIO FIN*/
 
 /*DESCRIPCION INICIO*/
@@ -234,7 +271,7 @@ nav img {
     flex-direction: row;
     justify-content: space-between;
     position: absolute;
-    z-index: 4;
+    z-index: 3;
     top: 100%;
     width: 100%;
 }
@@ -249,9 +286,9 @@ img.screen1{
 
 img.duende{
     width: 766px;
-    position: absolute;
+    position: relative;
     z-index: 5;
-    margin-left: 1000px;
+    left: 1000px;
 }
 
 .titulo-desc{
@@ -279,7 +316,6 @@ img.duende{
 /*PERSONAJES INICIO*/
 
 .personajes{
-    margin-top: 70%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -297,7 +333,7 @@ img.duende{
     margin-top: 200px;
     background-color: black;
     clip-path: polygon(0 0, 100% 10%, 100% 99%, 0 90%);
-    height: 1900px;
+    height: 2153px;
 }
 
 img.imagen-gwen1{
@@ -342,8 +378,9 @@ img.imagen-gwen3{
     background-size: cover;
     width: 75%;
     height: 800px;
-    margin-top: -30%;
+    margin-top: -40%;
 }
+
 
 img.arboles{
     position: absolute;
@@ -361,4 +398,272 @@ img.pasto{
 
 .tituloV{
     color: white;
+    font-size: 60px;
+    margin-top: 296px;
+    margin-right: 1005px;
+}
+
+img.msMarvel{
+    width: 853px;
+    position: absolute;
+    z-index: 3;
+    margin-top: -132px;
+    margin-left: -22px;
+}
+
+img.blackPanter{
+    width: 617px;
+    position: absolute;
+    z-index: 3;
+    margin-top: -327px;
+    margin-left: 636px;
+}
+
+img.hulk{
+    width: 653px;
+    position: absolute;
+    z-index: 3;
+    margin-top: 195px;
+    margin-left: 885px;
+}
+
+/*FIN VENGADORES*/
+
+/*INICIO INTRODUCCION JUEGO*/
+
+.introduccion{
+    font-size: 60px;
+    margin-top: 110px;
+    margin-left: 220px;
+}
+
+.imagenes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reglas{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between !important;
+}
+
+/*SELECCION ARAÑA*/
+
+.arañas{
+    height: 500px;
+    width: 100%;
+    background-color: black;
+    clip-path: polygon(0 0, 100% 23%, 100% 73%, 0% 100%);
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.arañas h1{
+    color: white;
+    margin-left: 80px;
+}
+
+.comprar-ahora{
+    width: 292px;
+    height: 50px;
+    border-radius: 111px;
+    background-color: #FFE901;
+    border-style: solid;
+    border-color: #2982FF;
+    border-width: 8px;
+    box-shadow: 5px 5px #02187E;
+    margin-left: 82px;
+}
+
+/*SECCION FINAL*/
+
+.seleccion-spiders{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 90px;
+}
+
+.suscribirse{
+    background-image: url("./Images/cielo3.png");
+    height: 1296px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.suscribirse h1{
+    margin-top: 200px;
+    font-size: 60px;
+    text-align: center;
+}
+
+.sub{
+    height: 100px;
+    width: 670px;
+    border-top-left-radius: 111px;
+    border-bottom-left-radius: 111px;
+    border-style: solid;
+    border-color: #2982FF;
+    border-width: 8px;
+    box-shadow: 5px 5px #02187E;
+}
+
+.sub::placeholder{
+    
+}
+
+.sub2{
+    position: absolute;
+    right: 431px;
+    bottom: -7464px;
+    z-index: 2;
+    border-top-right-radius: 111px;
+    border-bottom-right-radius: 111px;
+    border-style: solid;
+    border: 8px solid #2982FF;
+    background-color: #FFE901;
+    height: 100px;
+    letter-spacing: 0.11em;
+    font-size: 20px;
+    color: #02187E;
+    width: 200px;
+    box-shadow: 5px 5px #02187E;
+}
+
+.inscripcion{
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+img.teenT{
+    position: relative;
+    left: -168px;
+    margin-top: 30px;
+}
+/*SECCION FINAL, FIN*/
+
+/* FOOTER */
+footer {
+    width: 100%;
+    height: 600px;
+    background: #5E5E5D;
+}
+
+.plataformas-juego {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    padding: 20px 100px 20px 100px;
+    background: #242424;
+}
+
+.plataformas-juego img {
+    height: 100%;
+}
+
+.texto-footer {
+    padding: 100px;
+}
+
+.texto-footer p,
+.texto-footer p a {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.11em;
+    text-align: left;
+}
+
+.texto-footer img {
+    margin-top: 25px;
+}
+
+/* PANTALLA DE CARGA */
+.pantalla-carga {
+    opacity: 1;
+    background: url("./Images/fondo-carga.png");
+    background-position: center;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+    animation: background-animation 10000ms linear;
+}
+
+.pantalla-carga img {
+    width: 590px;
+    height: 301px;
+    position: absolute;
+    top: 10%;
+}
+
+.container-carga {
+    width: 100%;
+    height: 155px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+
+.container-carga h1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: #000000;
+}
+
+.animacion-spiderman {
+    height: 155px;
+    width: 165px;
+    background: url(images/spritesheet-transparente2.png);
+    position: absolute;
+    left: 250px;
+    margin-top: 30px;
+
+    transition: left 4000ms linear;
+
+    animation: spiderman-animation 1000ms steps(11) infinite;
+}
+
+.barra-carga {
+    height: 15px;
+    width: 130px;
+    background: linear-gradient(90deg, rgba(21,51,142,1) 35%, rgba(187,59,59,1) 76%);
+    border: 1px solid #ffffff;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    position: absolute;
+    left: 200px;
+    margin-top: 95px;
+
+    transition: width 4000ms linear;
+}
+
+@keyframes spiderman-animation {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 2005px 0;
+    }
+}
+
+@keyframes background-animation {
+    0% {
+        background-size: 100%;
+    }
+    100% {
+        background-size: 140%;
+    }
 }
