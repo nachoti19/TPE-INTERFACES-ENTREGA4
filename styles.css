@@ -8,8 +8,13 @@
     box-sizing: border-box;
 }
 
-body {
-    background: #ffffff;
+body { 
+    background-color: #ffffff;
+}
+
+main {
+    background-color: #5499F8;
+    padding-top: 116px;
 }
 
 main {
@@ -26,6 +31,8 @@ nav {
     background: linear-gradient(180deg, #5499F8 0%, #5499F8 87.91%, rgba(84, 153, 248, 0) 100%);
     padding: 20px 100px 30px 100px;
     z-index: 13;
+    position: absolute;
+    top: 0px;
     position: absolute;
     top: 0px;
 }
@@ -53,9 +60,22 @@ nav a:hover {
     box-shadow: 4px 5px 0px 0px #02187E;
     transform: translate(-5px, -4px);
     transition: all 150ms;
+    transition: all 450ms;
+}
+
+nav a:hover {
+    background-color: rgb(255, 246, 141);
+    box-shadow: 4px 5px 0px 0px #02187E;
+    transform: translate(-5px, -4px);
+    transition: all 150ms;
 }
 
 nav img {
+    height: 68px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    transition: all 300ms;
     height: 68px;
     position: absolute;
     left: 50%;
@@ -66,6 +86,7 @@ nav img {
 /* ESTILOS PARA EL NAV ALTERNATIVO */
 .nav-alternativa {
     padding: 22px 100px 22px 100px;
+    padding: 22px 100px 22px 100px;
     position: sticky;
     top: 0;
     left: 0;
@@ -74,9 +95,12 @@ nav img {
 .nav-alternativa a {
     width: 150px;
     line-height: 32px;
+    line-height: 32px;
     font-size: 15px;
 }
 
+.nav-alternativa img {
+    height: 60px;
 .nav-alternativa img {
     height: 60px;
 }
@@ -84,6 +108,7 @@ nav img {
 /* HAMBURGUESA */
 .btn-hamburguesa {
     z-index: 12;
+    transition: all 300ms;
     transition: all 300ms;
 }
 
@@ -125,6 +150,7 @@ nav img {
     flex-direction: column;
     align-items: center;
     position: fixed;
+    position: fixed;
     top: 0;
     width: 400px;
     height: 100vh;
@@ -132,9 +158,11 @@ nav img {
     background: #3f7dd3;
     transition: all 300ms;
     padding-top: 150px;
+    padding-top: 150px;
 }
 
 .menu-hamburguesa a {
+    position: relative;
     position: relative;
     margin: 12px;
     font-size: 25px;
@@ -156,9 +184,11 @@ nav img {
 
 .ocultar {
     left: -1000px;
+    left: -1000px;
 }
 
 .mostrar {
+    left: 0px;
     left: 0px;
 }
 
@@ -287,6 +317,7 @@ img.screen1{
 img.duende{
     width: 766px;
     position: relative;
+    position: relative;
     z-index: 5;
     left: 1000px;
 }
@@ -296,8 +327,9 @@ img.duende{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 60%;
     font-family: Lato;
+    padding: 100px;
 }
 
 .titulo-desc p{
@@ -666,4 +698,43 @@ footer {
     100% {
         background-size: 140%;
     }
+}
+
+/* FOOTER */
+footer {
+    margin-top: 500px;
+    width: 100%;
+    height: 600px;
+    background: #5E5E5D;
+}
+
+.plataformas-juego {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    padding: 20px 100px 20px 100px;
+    background: #242424;
+}
+
+.plataformas-juego img {
+    height: 100%;
+}
+
+.texto-footer {
+    padding: 100px;
+}
+
+.texto-footer p,
+.texto-footer p a {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.11em;
+    text-align: left;
+}
+
+.texto-footer img {
+    margin-top: 25px;
 }
