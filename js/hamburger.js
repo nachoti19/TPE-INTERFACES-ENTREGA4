@@ -1,5 +1,7 @@
+const wrapper = document.querySelector(".wrapper");
 const btnHamburguesa = document.querySelector(".btn-hamburguesa");
 const menuHamburguesa = document.querySelector(".menu-hamburguesa");
+
 const navBar = document.querySelector(".nav");
 
 const linea1 = document.querySelector(".linea-1");

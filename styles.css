@@ -6,17 +6,32 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.wrapper {
+    padding-top: 116px;
+    position: relative;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 86%, rgba(84,153,248,1) 86%);
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.parallax {
+    perspective: 100px;
 }
 
 body {
     background: #ffffff;
+    width: 100%;
 }
-
-main {
-    background-color: #5499F8;
-    padding-top: 116px;
-}
-
 
 /* NAV */
 nav {
@@ -30,7 +45,7 @@ nav {
     top: 0px;
 }
 
-nav a {
+.btn-comprar {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,6 +54,7 @@ nav a {
     color: #02187E;
     background-color: #FFE901;
     border: 8px solid #2982FF;
+    box-shadow: 4px 5px 0px 0px #02187E;
     border-radius: 111px;
 
     font-size: 20px;
@@ -48,19 +64,20 @@ nav a {
     transition: all 450ms;
 }
 
-nav a:hover {
+nav a:hover, .btn-comprar-ahora:hover {
     background-color: rgb(255, 246, 141);
-    box-shadow: 4px 5px 0px 0px #02187E;
-    transform: translate(-5px, -4px);
+    box-shadow: none;
+    transform: translate(5px, 4px);
     transition: all 150ms;
 }
 
-nav img {
+.titulo-nav {
+    opacity: 0;
     height: 68px;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    transition: all 300ms;
+    transition: opacity 180ms;
 }
 
 /* ESTILOS PARA EL NAV ALTERNATIVO */
@@ -125,19 +142,22 @@ nav img {
     flex-direction: column;
     align-items: center;
     position: fixed;
-    top: 0;
-    width: 400px;
+    top: 0px;
+    width: 350px;
     height: 100vh;
     z-index: 9;
     background: #3f7dd3;
+    border-left: 6px solid #FFE901;
     transition: all 300ms;
-    padding-top: 150px;
+    padding-top: 250px;
+
+    clip-path: polygon(0 1%, 100% 20%, 100% 100%, 0% 100%);
 }
 
 .menu-hamburguesa a {
     position: relative;
     margin: 12px;
-    font-size: 25px;
+    font-size: 22px;
     color: #ffffff;
     transition: all 150ms;
 }
@@ -163,201 +183,280 @@ nav img {
 }
 
 /* PORTADA INICIO */
-.portada{
-    background-image: url('./Images/cielo.png');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 1090px;
-    overflow: hidden;
+.portada {
+    background-size: cover;
+    width: 1080px;
+    height: 720px;
+    margin: auto;
+    position: relative;
+    transform-style: preserve-3d;
+    z-index: -1;
 }
 
-.titulo img{
+.portada img {
+    position: absolute;
+}
+
+.cielo-portada  {
+    left: 50%;
+    width: 171%;
+    transform: translate(-50%, 0) translateZ(1px);
+}
+
+.casa-izq {
+    width: 750px;
+    left: -450px;
+    transform: translateZ(3px);
+}
+
+.casa-centro {
+    left: 50%;
+    top: 700px;
+    transform: translate(-50%, 0) translateZ(2px);
+}
+
+.casa-der {
+    width: 550px;
+    right: -400px;
+    top: 0px;
+    transform: translateZ(2px);
+}
+
+.titulo {
     width: 590px;
+    left: 50%;
+    top: -18px;
+    transform: translate(-50%, 0) translateZ(4px);
 }
 
-.titulo{
-    position: absolute;
-    z-index: 3;
-    display: flex;
-    justify-content: center;
+.gwenP {
+    left: 10px;
+    top: 300px;
+    transform: translateZ(10px);
+}
+
+.peterP {
+    left: 320px;
+    top: 290px;
+    transform: translateZ(20px);
+}
+
+.milesP {
+    left: 625px;
+    top: 230px;
+    transform: translateZ(15px);
+}
+
+.tela1 {
+    width: 870px;
+    left: -385px;
+    top: 220px;
+    transform: translateZ(21px) scaleX(-1);
+}
+
+.tela2 {
+    width: 710px;
+    top: 165px;
+    left: 900px;
+    transform: translateZ(15px);
+}
+
+/*DESCRIPCION*/
+.container-descripcion {
     width: 100%;
-}
-
-.casas{
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    justify-content: space-around;
-}
-
-.casas img{
-    width: 569px;
-}
-
-.casas img.casa-izq{
-    position: relative;
-    left: -103px;
-}
-
-.casas img.casa-centro{
-    width: 778px;
-}
-
-.casas img.casa-der{
-    position: relative;
-    right: -43px;
-}
-
-.spider-pibes{
-    margin: 20%;
-    display: flex;
-    flex-direction: row;
-    z-index: 4;
-    position: absolute;
-    justify-content: center;
-}
-
-
-.spider-pibes img.tela2{
-    width: 610px;
-    position: absolute;
-    z-index: 6;
-    left: 1040px;
-    top: 26px;
-}
-
-.spider-pibes img.tela1{
-    transform: scaleX(-1);
-    left: -603px;
-    top: 8px;
-    width: 1108px;
-    position: absolute;
-    z-index: 6;
-}
-
-img.gwenP{
-    width: 502px;
-    position: absolute;
-    z-index: 4;
-    left: -146px;
-    top: -13px;
-}
-
-img.peterP{
-    position: absolute;
-    width: 610px;
-    left: 278px;
-    top: 88px;
-    z-index: 5;
-}
-
-img.milesP{
-    position: absolute;
-    z-index: 4;
-    left: 651px;
-    width: 548px;
-    top: -45px;
-}
-/*PORTADA INICIO FIN*/
-
-/*DESCRIPCION INICIO*/
-.descripcion{
+    height: 1000px;
+    margin-top: 100px;
+    clip-path: polygon(0 12%, 100% 0, 100% 100%, 0 80%);
     background-color: #8F6AA6;
-    height: 1055px;
-    clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 91%);
+    padding-top: 240px;
+}
+
+.descripcion{
+    width: 1080px;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    position: absolute;
-    z-index: 3;
-    top: 100%;
-    width: 100%;
 }
 
-img.screen1{
-    width: 1103px;
+.duende{
+    position: absolute;
+    z-index: 5;
+    left: 950px;
+    top: 1100px;
+
+    transform: translateZ(15px) scale(.80);
+    transition: top 150ms;
+}
+
+.screen1{
     position: absolute;
     z-index: 4;
-    margin-top: 33%;
-    margin-left: 5%;
-}
-
-img.duende{
-    width: 766px;
-    position: relative;
-    z-index: 5;
-    left: 1000px;
+    left: 375px;
+    top: 1490px;
 }
 
 .titulo-desc{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: center;
-    width: 50%;
-    font-family: Lato;
+    width: 60%;
+    margin-bottom: 20px;
 }
 
-.titulo-desc p{
-    margin: 20px;
-    font-size: 30px;
-    color: white;
-}
 
 .titulo-desc h1{
     color: white;
-    margin: 20px;
     font-size: 60px;
+    margin-bottom: 30px;
 }
-/*DESCRIPCION FIN*/
+
+.titulo-desc p{
+    font-size: 20px;
+    color: white;
+}
 
 /*PERSONAJES INICIO*/
-
+.container {
+    width: 1080px;
+    margin: auto;
+    margin-top: 100px;
+}
 .personajes{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    opacity: 0;
 }
 
-.personajes p{
-    font-size: 20px;
+.peter, .miles, .gwen{
+    position: relative;
+    top: 300px;
 }
 
-/*PERSONAJES FIN*/
+.peter{
+    transition: top 0.3s ease-in-out;
+}
 
-/*VENGADORES INICIO*/
+.miles{
+    transition: top 0.5s ease-in-out;
+}
 
+.gwen{
+    transition: top 0.7s ease-in-out;
+}
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/* VENGADORES INICIO */
 .informacion{
     margin-top: 200px;
     background-color: black;
-    clip-path: polygon(0 0, 100% 10%, 100% 99%, 0 90%);
-    height: 2153px;
+    clip-path: polygon(0 0, 100% 5%, 100% 99%, 0 90%);
+    height: 1881px;
 }
 
-img.imagen-gwen1{
-    width: 950px;
+.ghost-spider1, .ghost-spider2, .ghost-spider3{
+    overflow: hidden;
     position: absolute;
+}
+
+.ghost-spider1{
+    height: 400px;
+    width: 600px;
+    top: 2577px;
+    left: 366px;
     z-index: 1;
-    margin-top: 0px;
+    clip-path: polygon(6% 33.25%, 73.67% 15.75%, 81% 53.5%, 24.00% 104.00%);
+    transform: translateZ(15px) scale(.80);
+    transition: top 150ms;
 }
 
-img.imagen-gwen2{
-    width: 950px;
-    position: absolute;
-    z-index: 2;
-    margin-top: 216px;
-}
-
-img.imagen-gwen3{
-    width: 950px;
-    position: absolute;
+.ghost-spider2{
+    height: 535px;
+    width: 632px;
+    top: 2705px;
+    left: 366px;
     z-index: 3;
-    margin-top: 455px;
+    clip-path: polygon(6% 45.24%, 65.84% 15.33%, 77.4% 40.92%, 32.89% 91.04%);
 }
 
-/*when haces tus momos en video*/
+.ghost-spider3{
+    height: 586px;
+    width: 634px;
+    top: 2889px;
+    left: 345px;
+    z-index: 3;
+    clip-path: polygon(5.37% 53.43%, 60.16% 15.84%, 75.98% 36.31%, 38.41% 90.02%);
+}
+
+.ghost-spider1 img,.ghost-spider2 img, .ghost-spider3 img{
+    transition: 0.5s;
+
+}
+
+.ghost-spider1::after,.ghost-spider2::after, .ghost-spider3::after{
+    content: '';
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(to right, rgba(255,255,255, 0)0%, rgba(255,255,255,0.3));
+    left: -75%;
+    z-index: 2;
+    transform: skew(22deg);
+
+}
+
+.ghost-spider1:hover::after, .ghost-spider2:hover::after, .ghost-spider3:hover::after{
+    animation: light 1.2s;
+}
+
+.ghost-spider1:hover, .ghost-spider2:hover, .ghost-spider3:hover{
+    animation-name: animacion;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    z-index: 5;
+    transition: all 1s ease-in-out;
+}
+
+@keyframes light{
+    0%{
+        left: -75%;
+    }
+    100%{
+        left: 175%;
+    }
+}
+
+.ghost-spider1:hover img, .ghost-spider2:hover img, .ghost-spider3:hover img{
+    filter: brightness(1.2s);
+}
+
+@keyframes animacion{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(30deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .gwen-fondo{
     width: 100%;
 }
@@ -372,13 +471,12 @@ img.imagen-gwen3{
 .info-vengadores{
     position: absolute;
     z-index: 1;
-    margin-left: 12%;
     background-image: url("./Images/cielo2.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 75%;
-    height: 800px;
-    margin-top: -40%;
+    width: 1077.06px;
+    height: 527.63px;
+    top: 3975px;
 }
 
 
@@ -399,35 +497,32 @@ img.pasto{
 .tituloV{
     color: white;
     font-size: 60px;
-    margin-top: 296px;
-    margin-right: 1005px;
+    top: 3717px;
+    position: absolute;
 }
 
 img.msMarvel{
-    width: 853px;
     position: absolute;
     z-index: 3;
-    margin-top: -132px;
-    margin-left: -22px;
+    top: -85px;
+    left: 16px;
 }
 
 img.blackPanter{
-    width: 617px;
     position: absolute;
     z-index: 3;
-    margin-top: -327px;
-    margin-left: 636px;
+    top: -253px;
+    left: 443px;
 }
 
 img.hulk{
-    width: 653px;
     position: absolute;
     z-index: 3;
-    margin-top: 195px;
-    margin-left: 885px;
+    top: 108px;
+    left: 666px;
 }
 
-/*FIN VENGADORES*/
+/* FIN VENGADORES */
 
 /*INICIO INTRODUCCION JUEGO*/
 
@@ -451,42 +546,108 @@ img.hulk{
 }
 
 /*SELECCION ARAÑA*/
-
 .arañas{
-    height: 500px;
+    height: 610px;
     width: 100%;
     background-color: black;
-    clip-path: polygon(0 0, 100% 23%, 100% 73%, 0% 100%);
+    clip-path: polygon(0px 0px, 100% 27.2%, 100.00% 66.6%, 0.1% 100%);
     display: flex;
-    align-items: left;
     justify-content: center;
     flex-direction: column;
 }
 
 .arañas h1{
     color: white;
-    margin-left: 80px;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 72px;
+    letter-spacing: 0em;
+
 }
 
-.comprar-ahora{
+.btn-comprar-ahora {
+    z-index: 9;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 292px;
-    height: 50px;
-    border-radius: 111px;
+    line-height: 50px;
+    color: #02187E;
     background-color: #FFE901;
-    border-style: solid;
-    border-color: #2982FF;
-    border-width: 8px;
-    box-shadow: 5px 5px #02187E;
-    margin-left: 82px;
+    border: 8px solid #2982FF;
+    box-shadow: 4px 5px 0px 0px #02187E;
+    border-radius: 111px;
+
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 0.11em;
+
+    transition: all 450ms;
 }
 
 /*SECCION FINAL*/
+img.fondo-selectG{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+
+}
+img.fondo-selectP{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+img.fondo-selectM{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}
+
+.container-selectSpider{
+    width: 1080px;
+    margin: auto;
+    height: 500px;
+    margin-top: 60px;
+}
 
 .seleccion-spiders{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 90px;
+    margin-bottom: 139px;
+    margin-top: 130px;
+}
+
+img.pjGwen{
+    position: relative;
+    left: 49px;
+    top: -59px;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+img.pjGwen:hover, img.pjPeter:hover, img.pjMiles:hover{
+    transform: scale(1.5);
+    z-index: 3;
+    cursor: pointer;
+}
+
+img.pjPeter{
+    position: relative;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+img.pjMiles{
+    position: relative;
+    right: 40px;
+    top: -67px;
+    z-index: 2;
+    transition: all 0.5s ease;
 }
 
 .suscribirse{
@@ -495,12 +656,14 @@ img.hulk{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    clip-path: polygon(0px 6px, 100% 14.94%, 100% 100%, 0% 100%);
 }
 
 .suscribirse h1{
-    margin-top: 200px;
     font-size: 60px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .sub{
@@ -512,16 +675,26 @@ img.hulk{
     border-color: #2982FF;
     border-width: 8px;
     box-shadow: 5px 5px #02187E;
+    
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.11em;
+    padding-left: 35px;
+
 }
 
-.sub::placeholder{
-    
+.container-sub{
+    width: 1080px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
 }
 
 .sub2{
-    position: absolute;
-    right: 431px;
-    bottom: -7464px;
+    position: relative;
+    right: 11px;
     z-index: 2;
     border-top-right-radius: 111px;
     border-bottom-right-radius: 111px;
@@ -543,15 +716,46 @@ img.hulk{
 
 img.teenT{
     position: relative;
-    left: -168px;
+    left: -171px;
     margin-top: 30px;
 }
-/*SECCION FINAL, FIN*/
+
+.spiderman-animado {
+    height: 201px;
+    width: 105px;
+    background: url(images/spritesheet-footer.png);
+    margin-top: 30px;
+    animation: spiderman-crawling 1000ms steps(8) infinite;
+    position: absolute;
+    z-index: 7;
+    top: 60%;
+    left: 100px;
+}
+
+.spiderman-animado:hover {
+    animation: spiderman-crawling 500ms steps(8) infinite;
+}
+
+@keyframes spiderman-crawling {
+    0% {
+        background-position: 0;
+    }
+    100% {
+        background-position: 845px 0;
+    }
+}
+
+.casas-juntas {
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    z-index: 3;
+}
 
 /* FOOTER */
 footer {
     width: 100%;
-    height: 600px;
+    height: 610px;
     background: #5E5E5D;
 }
 
@@ -560,16 +764,16 @@ footer {
     justify-content: center;
     width: 100%;
     height: 80px;
-    padding: 20px 100px 20px 100px;
     background: #242424;
 }
 
 .plataformas-juego img {
-    height: 100%;
+    width: 1080px;
 }
 
-.texto-footer {
-    padding: 100px;
+.container-info-footer {
+    width: 1080px;
+    margin: 60px auto 60px auto;
 }
 
 .texto-footer p,
@@ -584,6 +788,82 @@ footer {
 
 .texto-footer img {
     margin-top: 25px;
+}
+
+/* MÁS AMIGOS, MÁS DIVERSIÓN */
+.container-mas-amigos {
+    width: 1080px;
+    margin: auto;
+}
+
+.container-mas-amigos h1 {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 57px;
+    letter-spacing: 0em;
+}
+
+.contenido-mas-amigos {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 70px;
+}
+
+.columna-der {
+    width: 528px;
+    display: flex;
+    flex-direction: column;
+}
+
+.columna-izq {
+    width: 552px;
+    height: 1640px;
+    display: flex;
+    position: relative;
+}
+
+.imagen-columna-izq {
+    width: 552px;
+    height: 309px;
+    margin-top: 100px;
+    background: url("images/juego1.png");
+    background-size: cover;
+    transition: background 300ms;
+}
+
+.columna-izq img {
+    margin-top: 100px;
+}
+
+.columna-der div {
+    height: 310px;
+    margin-top: 100px;
+    padding-left: 50px;
+    overflow: hidden;
+    transition: opacity 600ms;
+}
+
+.txt-2, .txt-3, .txt-4 {
+    opacity: 0;
+}
+
+.txt-1 {
+    opacity: 1;
+}
+
+.columna-der h2 {
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 38px;
+    letter-spacing: 0em;
+}
+
+.columna-der p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
 }
 
 /* PANTALLA DE CARGA */
